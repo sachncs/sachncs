@@ -29,5 +29,5 @@ Machine Learning Systems • Distributed Computing • Generative AI Infrastruct
 
 ### 📫 Let's Talk
 
-- Reach me at sachn-cs@gmail.com
+- Reach me at sachncs@gmail.com
 - Always happy to collaborate on anything ambitious, weird, or world-changing
