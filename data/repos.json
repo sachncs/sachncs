@@ -1,6 +1,6 @@
 {
   "owner": "sachncs",
-  "generatedAt": "2026-08-23T10:56:19Z",
+  "generatedAt": "2026-08-23T10:57:24Z",
   "axes": [
     {
       "id": "ai",
@@ -851,48 +851,6 @@
       }
     },
     {
-      "name": "ai-soc-workflow",
-      "url": "https://github.com/sachncs/ai-soc-workflow",
-      "description": "",
-      "language": "TypeScript",
-      "languages": [],
-      "topics": [],
-      "stars": 0,
-      "pushedAt": "2026-08-23T07:11:48Z",
-      "isArchived": false,
-      "scores": {
-        "ai": 0.56,
-        "crypto": 0.0,
-        "distributed": 0.0,
-        "optim": 0.0,
-        "algos": 0.0,
-        "backend": 1.67,
-        "frontend": 0.56,
-        "perf": 0.0
-      }
-    },
-    {
-      "name": "incident-response",
-      "url": "https://github.com/sachncs/incident-response",
-      "description": "",
-      "language": "TypeScript",
-      "languages": [],
-      "topics": [],
-      "stars": 0,
-      "pushedAt": "2026-08-23T07:11:47Z",
-      "isArchived": false,
-      "scores": {
-        "ai": 0.0,
-        "crypto": 0.0,
-        "distributed": 0.0,
-        "optim": 0.0,
-        "algos": 0.0,
-        "backend": 1.67,
-        "frontend": 1.11,
-        "perf": 0.0
-      }
-    },
-    {
       "name": "convexfolio",
       "url": "https://github.com/sachncs/convexfolio",
       "description": "Optimal Option Portfolios for Skew-Elliptical t Returns",
@@ -1048,27 +1006,6 @@
       "topics": [],
       "stars": 0,
       "pushedAt": "2026-07-23T10:24:24Z",
-      "isArchived": false,
-      "scores": {
-        "ai": 0.0,
-        "crypto": 0.0,
-        "distributed": 0.0,
-        "optim": 0.0,
-        "algos": 0.0,
-        "backend": 0.0,
-        "frontend": 0.0,
-        "perf": 0.0
-      }
-    },
-    {
-      "name": "banyan",
-      "url": "https://github.com/sachncs/banyan",
-      "description": "",
-      "language": null,
-      "languages": [],
-      "topics": [],
-      "stars": 0,
-      "pushedAt": "2026-08-23T10:22:52Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
@@ -1271,27 +1208,6 @@
       }
     },
     {
-      "name": "old",
-      "url": "https://github.com/sachncs/old",
-      "description": "",
-      "language": "TypeScript",
-      "languages": [],
-      "topics": [],
-      "stars": 0,
-      "pushedAt": "2026-07-25T19:21:06Z",
-      "isArchived": false,
-      "scores": {
-        "ai": 0.0,
-        "crypto": 0.0,
-        "distributed": 0.0,
-        "optim": 0.0,
-        "algos": 0.0,
-        "backend": 0.0,
-        "frontend": 0.0,
-        "perf": 0.0
-      }
-    },
-    {
       "name": "pjepa",
       "url": "https://github.com/sachncs/pjepa",
       "description": "",
@@ -1300,27 +1216,6 @@
       "topics": [],
       "stars": 0,
       "pushedAt": "2026-08-16T11:57:56Z",
-      "isArchived": false,
-      "scores": {
-        "ai": 0.0,
-        "crypto": 0.0,
-        "distributed": 0.0,
-        "optim": 0.0,
-        "algos": 0.0,
-        "backend": 0.0,
-        "frontend": 0.0,
-        "perf": 0.0
-      }
-    },
-    {
-      "name": "res",
-      "url": "https://github.com/sachncs/res",
-      "description": "",
-      "language": "TypeScript",
-      "languages": [],
-      "topics": [],
-      "stars": 0,
-      "pushedAt": "2026-08-22T09:21:18Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
@@ -1363,27 +1258,6 @@
       "topics": [],
       "stars": 0,
       "pushedAt": "2026-07-17T09:56:36Z",
-      "isArchived": false,
-      "scores": {
-        "ai": 0.0,
-        "crypto": 0.0,
-        "distributed": 0.0,
-        "optim": 0.0,
-        "algos": 0.0,
-        "backend": 0.0,
-        "frontend": 0.0,
-        "perf": 0.0
-      }
-    },
-    {
-      "name": "uldu",
-      "url": "https://github.com/sachncs/uldu",
-      "description": "",
-      "language": "TypeScript",
-      "languages": [],
-      "topics": [],
-      "stars": 0,
-      "pushedAt": "2026-08-23T10:53:40Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
