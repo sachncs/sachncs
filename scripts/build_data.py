@@ -45,6 +45,7 @@ def gh_list_repos(owner: str) -> list[dict]:
     cmd = [
         "gh", "repo", "list", owner,
         "--limit", "200",
+        "--visibility", "public",
         "--json",
         "name,description,primaryLanguage,languages,repositoryTopics,"
         "stargazerCount,pushedAt,updatedAt,url,isArchived,isFork,diskUsage",
