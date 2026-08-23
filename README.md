@@ -4,6 +4,25 @@
 
 I transform research concepts into production systems — prioritizing scalability, reproducibility, and operational excellence.
 
+### 🧭 Repo radar — every project at a glance
+
+[![sachncs capability radar](https://sachncs.github.io/sachncs/data/radar-by-lang.png)](https://sachncs.github.io/sachncs/)
+
+Every public repo, scored across eight axes (AI/ML, Cryptography, Distributed Systems, Optimization, Algorithms, Production Backend, Frontend, Performance) and rendered as an interactive radar. Hover for details, click a polygon to open the repo, filter by language, or group by language.
+
+<p align="center">
+  <a href="https://sachncs.github.io/sachncs/" target="_blank" rel="noopener">
+    <strong>→ Open the interactive radar</strong>
+  </a>
+</p>
+
+<details>
+<summary>iframe embed (works on github.com web)</summary>
+
+<iframe src="https://sachncs.github.io/sachncs/" width="100%" height="640" frameborder="0" loading="lazy"></iframe>
+
+</details>
+
 ### 🧠 Current Areas of Work
 
 | Area | Focus |
@@ -18,7 +37,7 @@ I transform research concepts into production systems — prioritizing scalabili
 
 | Category | Skills |
 |----------|--------|
-| **Programming Languages** | Python, Golang, SQL, Rust, LaTeX |
+| **Programming Languages** | Python, TypeScript, Rust, Golang, SQL |
 | **AI / LLM** | PyTorch, TensorFlow, vLLM, Hugging Face, LangChain |
 | **Cloud & MLOps** | AWS, GCP, Kubernetes, Docker, Modal, FastAPI |
 | **Databases & Observability** | Postgres, Mongo, Redis, Weaviate, Elasticsearch, OpenTelemetry |
