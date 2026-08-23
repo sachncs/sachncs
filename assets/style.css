@@ -82,13 +82,79 @@ a:hover { text-decoration: underline; }
   display: flex;
   flex-direction: column;
   min-height: 620px;
+  position: relative;
+  overflow: hidden;
 }
+/* faint radar grid background — CRT vibe */
+.canvas-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 65%),
+    repeating-linear-gradient(0deg,   rgba(255,255,255,0.012) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(90deg,  rgba(255,255,255,0.012) 0 1px, transparent 1px 80px);
+}
+
 .canvas-inner {
   position: relative;
   flex: 1;
   min-height: 520px;
 }
-#radar { width: 100% !important; height: 100% !important; }
+#radar { width: 100% !important; height: 100% !important; display: block; }
+
+/* rotating radar-sweep beam over the canvas */
+.radar-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(124, 58, 237, 0.0) 30deg,
+      rgba(124, 58, 237, 0.22) 60deg,
+      rgba(124, 58, 237, 0.04) 90deg,
+      transparent 120deg,
+      transparent 360deg
+    );
+  -webkit-mask: radial-gradient(circle at 50% 50%, black 0%, transparent 78%);
+          mask: radial-gradient(circle at 50% 50%, black 0%, transparent 78%);
+  animation: sweep 6s linear infinite;
+  mix-blend-mode: screen;
+}
+@keyframes sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* core glow at centre */
+.radar-core {
+  position: absolute;
+  width: 80px; height: 80px;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.45) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);   opacity: 0.7; }
+  50%      { transform: translate(-50%, -50%) scale(1.4); opacity: 1;   }
+}
+
+/* canvas glow ring on hover */
+.canvas-inner.is-hot::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius);
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.45), 0 0 24px rgba(124, 58, 237, 0.25);
+}
+
 .hint {
   margin-top: 12px;
   font-size: 12px;

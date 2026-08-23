@@ -38,8 +38,16 @@ async function bootstrap() {
   buildChart();
   bindControls();
   renderMeta();
+  bindCanvasGlow();
   // re-render on resize
   window.addEventListener("resize", debounce(() => state.chart && state.chart.resize(), 80));
+}
+
+function bindCanvasGlow() {
+  const inner = document.querySelector(".canvas-inner");
+  if (!inner) return;
+  inner.addEventListener("mouseenter", () => inner.classList.add("is-hot"));
+  inner.addEventListener("mouseleave", () => inner.classList.remove("is-hot"));
 }
 
 async function loadData() {
@@ -178,9 +186,20 @@ let chart = null;
 
 function buildChart() {
   const ctx = document.getElementById("radar").getContext("2d");
+  const datasets = buildDatasets();
+  const totalDuration = 900;
+  // stagger datasets so each repo polygon "draws itself in" sequentially
+  datasets.forEach((ds, i) => {
+    ds.animation = {
+      duration: totalDuration,
+      delay: i * 60,
+      easing: "easeOutQuart",
+    };
+  });
+
   chart = new Chart(ctx, {
     type: "radar",
-    data: { labels: state.axes.map(a => a.label), datasets: buildDatasets() },
+    data: { labels: state.axes.map(a => a.label), datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
