@@ -317,15 +317,70 @@ def _rgba(c: str, a: float) -> str:
     r, g, b = _hex(c)
     return f"rgba({r},{g},{b},{a})"
 
+def _hex_to_hsl(c: str) -> tuple[float, float, float]:
+    """Return (h, s, l) in [0,360), [0,1], [0,1] for a #rrggbb colour."""
+    r, g, b = (v / 255.0 for v in _hex(c))
+    mx, mn = max(r, g, b), min(r, g, b)
+    l = (mx + mn) / 2.0
+    if mx == mn:
+        return 0.0, 0.0, l
+    d = mx - mn
+    s = d / (2.0 - mx - mn) if l > 0.5 else d / (mx + mn)
+    if mx == r:
+        h = ((g - b) / d) % 6
+    elif mx == g:
+        h = (b - r) / d + 2
+    else:
+        h = (r - g) / d + 4
+    return h * 60.0, s, l
+
+def _hsl_to_hex(h: float, s: float, l: float) -> str:
+    """Convert (h, s, l) -> '#rrggbb'."""
+    c = (1 - abs(2 * l - 1)) * s
+    x = c * (1 - abs((h / 60.0) % 2 - 1))
+    m = l - c / 2.0
+    if h < 60:
+        r, g, b = c, x, 0.0
+    elif h < 120:
+        r, g, b = x, c, 0.0
+    elif h < 180:
+        r, g, b = 0.0, c, x
+    elif h < 240:
+        r, g, b = 0.0, x, c
+    elif h < 300:
+        r, g, b = x, 0.0, c
+    else:
+        r, g, b = c, 0.0, x
+    return "#%02x%02x%02x" % (
+        int(round((r + m) * 255)),
+        int(round((g + m) * 255)),
+        int(round((b + m) * 255)),
+    )
+
+def _cycle_colors(c: str, steps: int = 6) -> list[str]:
+    """Sample `steps` hues around the wheel anchored at `c`, brighter frames.
+
+    Used to animate a polygon through a shifting colour rather than tracing
+    its outline. Each frame is a hex colour; SVG <animate> on fill/stroke
+    interpolates between them, and repeatCount loops it forever.
+    """
+    h, s, l = _hex_to_hsl(c)
+    # nudge sat/light up a touch so the pulsing reads on the dark bg
+    s = min(1.0, s * 1.15 + 0.05)
+    l = min(0.95, l * 1.12 + 0.08)
+    return [_hsl_to_hex((h + (360.0 / steps) * i) % 360.0, s, l) for i in range(steps)]
+
 
 def render_animated_svg(
     repos: list[dict], axes: list[dict], out_path: Path
 ) -> None:
-    """Emit a self-animating SVG that draws polygons in sequentially and
-    sweeps a radar beam across the chart continuously.
+    """Emit a self-animating SVG that cycles each language polygon through a
+    shifting colour and sweeps a radar beam across the chart continuously.
 
-    No JavaScript: all motion comes from SVG <animate> / <animateTransform>.
-    Embeds directly in a GitHub README via <img> (like Platane/snk).
+    Instead of tracing/outlining a shape, every polygon continuously pulses
+    through a rotating palette (radar-like) with no JavaScript: all motion
+    comes from SVG <animate> / <animateTransform>. Embeds directly in a
+    GitHub README via <img> (like Platane/snk).
     """
     def esc(s: str) -> str:
         return (
@@ -430,10 +485,6 @@ def render_animated_svg(
     # ascending count: smaller languages draw first so the biggest sits on top
     sorted_langs = sorted(by_lang.items(), key=lambda kv: len(kv[1]))
 
-    draw_duration = 0.9            # how long each polygon takes to draw
-    stagger = 0.18                 # delay between successive polygons
-    total = draw_duration + stagger * (len(sorted_langs) - 1) + 0.5
-
     for idx, (lang, group) in enumerate(sorted_langs):
         if len(group) < 2:
             continue
@@ -456,55 +507,28 @@ def render_animated_svg(
             f'fill="{_rgba(color, 0.04)}" stroke="{_rgba(color, 0.0)}" '
             f'stroke-width="1" stroke-linejoin="round" opacity="0.6"/>'
         )
-        pts = []
-        for v, ang_deg in zip(avg, axis_angles_deg):
-            r = (v / 10.0) * radius
-            a = math.radians(ang_deg)
-            pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
-        path_d = "M " + " L ".join(f"{x:.2f},{y:.2f}" for x, y in pts) + " Z"
-        length = sum(
-            math.hypot(pts[i][0] - pts[(i + 1) % len(pts)][0],
-                       pts[i][1] - pts[(i + 1) % len(pts)][1])
-            for i in range(len(pts))
-        )
-
-        begin = idx * stagger
         # use the max envelope as the bold polygon
         pts = []
         for v, ang_deg in zip(mx, axis_angles_deg):
             r = (v / 10.0) * radius
             a = math.radians(ang_deg)
             pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
-        path_d = "M " + " L ".join(f"{x:.2f},{y:.2f}" for x, y in pts) + " Z"
-        length = sum(
-            math.hypot(pts[i][0] - pts[(i + 1) % len(pts)][0],
-                       pts[i][1] - pts[(i + 1) % len(pts)][1])
-            for i in range(len(pts))
-        )
 
-        # bold polygon (max envelope) — fills breathe between two opacities
+        # bold polygon (max envelope) — continuously cycles through a shifting
+        # colour palette so each language reads like a radar blip rather than
+        # tracing its outline. The stroke follows the fill to stay in sync.
+        frames = _cycle_colors(color, steps=6)
+        key_times = ";".join(f"{i / (len(frames) - 1):g}" for i in range(len(frames)))
+        dur = 4.0 + idx * 0.5
         parts.append(
             f'<polygon points="{" ".join(f"{x:.2f},{y:.2f}" for x,y in pts)}" '
-            f'fill="{_rgba(color, 0.16)}" stroke="{color}" '
+            f'fill="{color}" stroke="{color}" '
             f'stroke-width="2.6" stroke-linejoin="round" opacity="0.95">'
-            f'<animate attributeName="fill" values="{_rgba(color, 0.16)};{_rgba(color, 0.28)};{_rgba(color, 0.16)}" '
-            f'keyTimes="0;0.5;1" begin="0s" dur="{3 + idx * 0.4:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="fill" values="{";".join(frames)}" '
+            f'keyTimes="{key_times}" begin="0s" dur="{dur:.2f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="stroke" values="{";".join(frames)}" '
+            f'keyTimes="{key_times}" begin="0s" dur="{dur:.2f}s" repeatCount="indefinite"/>'
             f'</polygon>'
-        )
-        # a separate stroke-only path that draws itself in via dasharray,
-        # then sits invisibly underneath. This is the "snake" trail.
-        parts.append(
-            f'<path d="{path_d}" fill="none" stroke="{color}" '
-            f'stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" '
-            f'stroke-dasharray="{length:.2f}" stroke-dashoffset="{length:.2f}" '
-            f'opacity="0">'
-            f'<animate attributeName="opacity" values="0;0.95;0" '
-            f'keyTimes="0;0.2;1" begin="{begin:.2f}s" dur="{draw_duration:.2f}s" '
-            f'fill="freeze"/>'
-            f'<animate attributeName="stroke-dashoffset" from="{length:.2f}" to="0" '
-            f'begin="{begin:.2f}s" dur="{draw_duration:.2f}s" '
-            f'calcMode="spline" keySplines="0.4 0 0.2 1" fill="freeze"/>'
-            f'</path>'
         )
 
     # core glow at the centre

@@ -7,25 +7,10 @@ I transform research concepts into production systems — prioritizing scalabili
 ### 🧭 Repo radar — every project at a glance
 
 <p align="center">
-  <a href="https://sachncs.github.io/sachncs/" target="_blank" rel="noopener">
-    <img src="https://sachncs.github.io/sachncs/data/radar-animated.svg" alt="sachncs capability radar — animated SVG" width="100%" />
-  </a>
+  <img src="https://sachncs.github.io/sachncs/data/radar-animated.svg" alt="sachncs capability radar — animated SVG" width="100%" />
 </p>
 
-Every public repo, scored across eight axes (AI/ML, Cryptography, Distributed Systems, Optimization, Algorithms, Production Backend, Frontend, Performance) and rendered as an animated radar. The SVG above draws itself in and sweeps continuously — pure SVG, like [Platane/snk](https://github.com/Platane/snk).
-
-<p align="center">
-  <a href="https://sachncs.github.io/sachncs/" target="_blank" rel="noopener">
-    <strong>→ Open the interactive radar</strong>
-  </a>
-</p>
-
-<details>
-<summary>iframe embed (full Chart.js interactivity on github.com web)</summary>
-
-<iframe src="https://sachncs.github.io/sachncs/" width="100%" height="640" frameborder="0" loading="lazy"></iframe>
-
-</details>
+Every public repo, scored across eight axes (AI/ML, Cryptography, Distributed Systems, Optimization, Algorithms, Production Backend, Frontend, Performance) and rendered as an animated radar. Each language polygon cycles through a shifting colour palette while the beam sweeps continuously, right here in the README — pure animated SVG, no redirect, like [Platane/snk](https://github.com/Platane/snk).
 
 ### 🧠 Current Areas of Work
 
