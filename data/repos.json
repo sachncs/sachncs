@@ -1,6 +1,6 @@
 {
   "owner": "sachncs",
-  "generatedAt": "2026-08-23T11:08:18Z",
+  "generatedAt": "2026-08-30T08:16:38Z",
   "axes": [
     {
       "id": "ai",
@@ -286,8 +286,8 @@
         "tracing",
         "version-control"
       ],
-      "stars": 0,
-      "pushedAt": "2026-08-20T17:17:05Z",
+      "stars": 1,
+      "pushedAt": "2026-08-26T11:21:46Z",
       "isArchived": false,
       "scores": {
         "ai": 10.0,
@@ -322,7 +322,7 @@
         "x402"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-20T14:51:25Z",
+      "pushedAt": "2026-08-24T09:24:51Z",
       "isArchived": false,
       "scores": {
         "ai": 10.0,
@@ -372,7 +372,7 @@
         "fintech"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-23T09:59:53Z",
+      "pushedAt": "2026-08-24T08:35:17Z",
       "isArchived": false,
       "scores": {
         "ai": 4.44,
@@ -429,7 +429,7 @@
         "shortcut-sets"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-15T14:03:52Z",
+      "pushedAt": "2026-08-26T02:44:57Z",
       "isArchived": false,
       "scores": {
         "ai": 1.67,
@@ -486,7 +486,7 @@
         "semantic-search"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-23T09:49:06Z",
+      "pushedAt": "2026-08-28T19:30:57Z",
       "isArchived": false,
       "scores": {
         "ai": 10.0,
@@ -583,7 +583,7 @@
         "vehicle-routing-problem"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-23T07:11:54Z",
+      "pushedAt": "2026-08-24T18:33:21Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
@@ -608,7 +608,7 @@
         "ai-agents"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-23T09:50:47Z",
+      "pushedAt": "2026-08-29T18:41:12Z",
       "isArchived": false,
       "scores": {
         "ai": 3.89,
@@ -658,7 +658,7 @@
         "okf-format"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-17T07:55:48Z",
+      "pushedAt": "2026-08-24T08:40:17Z",
       "isArchived": false,
       "scores": {
         "ai": 10.0,
@@ -684,7 +684,7 @@
         "memory-fabric"
       ],
       "stars": 0,
-      "pushedAt": "2026-08-03T02:25:48Z",
+      "pushedAt": "2026-08-30T07:22:03Z",
       "isArchived": false,
       "scores": {
         "ai": 10.0,
@@ -718,6 +718,35 @@
         "backend": 0.0,
         "frontend": 0.0,
         "perf": 3.33
+      }
+    },
+    {
+      "name": "hurstify",
+      "url": "https://github.com/sachncs/hurstify",
+      "description": "Estimates the roughness, Hurst parameter of a log-volatility series. ",
+      "language": "JavaScript",
+      "languages": [],
+      "topics": [
+        "fractional-brownian-motion",
+        "hurst-parameter",
+        "kolmogorov-smirnov",
+        "rough-volatility",
+        "statistical-inference",
+        "time-series",
+        "volatility-roughness"
+      ],
+      "stars": 0,
+      "pushedAt": "2026-08-27T19:18:13Z",
+      "isArchived": false,
+      "scores": {
+        "ai": 1.67,
+        "crypto": 0.0,
+        "distributed": 0.0,
+        "optim": 0.0,
+        "algos": 3.33,
+        "backend": 0.0,
+        "frontend": 0.0,
+        "perf": 1.67
       }
     },
     {
@@ -812,7 +841,7 @@
       "languages": [],
       "topics": [],
       "stars": 0,
-      "pushedAt": "2026-08-22T15:33:47Z",
+      "pushedAt": "2026-08-30T07:02:19Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
@@ -826,31 +855,6 @@
       }
     },
     {
-      "name": "randomized-kolmogorov-smirnov-analysis-of-volatility-roughness",
-      "url": "https://github.com/sachncs/randomized-kolmogorov-smirnov-analysis-of-volatility-roughness",
-      "description": "Randomized Kolmogorov\u2013Smirnov Analysis of Volatility Roughness",
-      "language": "JavaScript",
-      "languages": [],
-      "topics": [
-        "statistics",
-        "volatility",
-        "volatility-modeling"
-      ],
-      "stars": 0,
-      "pushedAt": "2026-08-10T14:16:36Z",
-      "isArchived": false,
-      "scores": {
-        "ai": 0.0,
-        "crypto": 0.0,
-        "distributed": 0.0,
-        "optim": 0.0,
-        "algos": 3.33,
-        "backend": 0.0,
-        "frontend": 0.0,
-        "perf": 0.0
-      }
-    },
-    {
       "name": "convexfolio",
       "url": "https://github.com/sachncs/convexfolio",
       "description": "Optimal Option Portfolios for Skew-Elliptical t Returns",
@@ -858,7 +862,7 @@
       "languages": [],
       "topics": [],
       "stars": 0,
-      "pushedAt": "2026-08-22T08:16:15Z",
+      "pushedAt": "2026-08-28T09:14:11Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
@@ -1110,7 +1114,7 @@
       "languages": [],
       "topics": [],
       "stars": 0,
-      "pushedAt": "2026-08-17T09:48:28Z",
+      "pushedAt": "2026-08-24T00:25:47Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
@@ -1194,7 +1198,7 @@
       "languages": [],
       "topics": [],
       "stars": 0,
-      "pushedAt": "2026-08-18T05:46:24Z",
+      "pushedAt": "2026-08-24T06:23:53Z",
       "isArchived": false,
       "scores": {
         "ai": 0.0,
