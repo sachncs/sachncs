@@ -47,4 +47,4 @@ Most of my work is public. See the odd experiment, the production systems, and t
 ## Let's Talk
 
 - ✉️ **sachncs@gmail.com**
-- Always happy to collaborate on ambitious, weird, or world-changing projects.
+- Always happy to collaborate on ambitious, weird, or world-changing projects. 
