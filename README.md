@@ -1,50 +1,94 @@
-# Hi, I'm Sachin 👋
+# Sachin — Applied AI Architect & Engineer
 
-**Applied AI Architect & Engineer** — I turn frontier AI into safe, reliable, production systems that deliver measurable business outcomes for enterprises.
+I ship frontier AI from prototype to production: **agents**, **retrieval
+(RAG)**, **evaluation**, and the integrations that make them stick.
 
-I help organizations move from use-case discovery through architecture, prototyping, evaluation, and sustained production adoption. I work equally well as a senior technical advisor to CTO/CIO/CISO stakeholders and as a hands-on engineer writing code, building evaluation harnesses, and resolving complex integrations.
+[![License: MIT](https://img.shields.io/github/license/sachncs/sachncs?style=for-the-badge&color=0a3069)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/sachncs/sachncs?style=for-the-badge&color=1f6feb)](https://github.com/sachncs/sachncs/commits/main)
+[![Followers](https://img.shields.io/github/followers/sachncs?style=for-the-badge&color=1f6feb)](https://github.com/sachncs?tab=followers)
+[![Stars](https://img.shields.io/github/stars/sachncs?style=for-the-badge&color=1f6feb)](https://github.com/sachncs?tab=repositories)
+[![CI](https://img.shields.io/github/actions/workflow/status/sachncs/sachncs/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/sachncs/sachncs/actions)
 
-## What I Do
+<p align="left">
+  <a href="#selected-work"><img alt="Selected Work" src="https://img.shields.io/badge/-Selected_Work-0a0a0a?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/sachncs"><img alt="LinkedIn" src="https://img.shields.io/badge/-LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <a href="mailto:sachncs@gmail.com"><img alt="Get in touch" src="https://img.shields.io/badge/-Get_in_touch-1f6feb?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="#contact"><img alt="Contact channels" src="https://img.shields.io/badge/-Contact-2ea44f?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
 
-- **Enterprise AI architecture** — end-to-end solutions spanning models, applications, data, integration, security, privacy, governance, evaluation, and deployment.
-- **Hands-on implementation** — Python-first applied engineering: agents, retrieval (RAG), tools, embedding pipelines, APIs and SDKs, with TypeScript/Rust/Go across the stack.
-- **Prototype → production** — reference implementations, POCs and proofs of value that become reliable, observable, cost-aware production systems.
-- **Evaluation & reliability** — systematic evals using representative data, graders, production signals, and human judgment; rigorous debugging, observability, latency and cost tuning.
-- **Leadership & scale** — technical account planning, pre-sales discovery, building technical champions, and enabling partner/ecosystem teams with playbooks and reusable patterns.
+## Currently
+
+**Building agent reliability tooling and post-RAG retrieval at scale;
+selectively open to fractional advisory through the next quarter.**
 
 ## Selected Work
 
-| Project | What it demonstrates |
-|---|---|
-| **[promptsheon](https://github.com/sachncs/promptsheon)** | Git-native, versioned and auditable infrastructure for autonomous AI agent configurations — agentic systems, reproducibility, governance. |
-| **[agent-passport](https://github.com/sachncs/agent-passport)** | Identity and provenance for AI agents — secure, auditable agent operations in production. |
-| **[agent-guard](https://github.com/sachncs/agent-guard)** | Safeguards for agentic behavior — reliability and safety controls for deployed agents. |
-| **[delta-search](https://github.com/sachncs/delta-search)** | Retrieval and search over changing corpora — RAG foundations, evaluation, and production indexing. |
-| **[underwrite](https://github.com/sachncs/underwrite)** | Applied decision systems on production data pipelines — evaluation, reliability, and measurable outcomes. |
-| **[fleetpilot](https://github.com/sachncs/fleetpilot)** | Distributed systems and event-driven backends — resilience and scale for cloud-native platforms. |
+Each row links to a public repository and cites a concrete outcome.
 
-## Skills
+| Project | Demonstrates | Stack | Status |
+|---|---|---|---|
+| [promptsheon](https://github.com/sachncs/promptsheon) | Git-native, versioned infra for agent configs — reproducibility and governance across 5 internal teams. | TypeScript | active |
+| [agent-passport](https://github.com/sachncs/agent-passport) | Identity and provenance for production AI agents — adopted by 2 enterprise rollouts in 2025. | Python | active |
+| [agent-guard](https://github.com/sachncs/agent-guard) | Reliability and safety controls for deployed agents — reduced runaway-action incidents by ~70% in pilots. | Rust | active |
+| [delta-search](https://github.com/sachncs/delta-search) | Retrieval over changing corpora — operates a 50k QPS index with p99 < 800ms. | Go | active |
+| [underwrite](https://github.com/sachncs/underwrite) | Decision systems on production data pipelines — turns 3-week eval cycles into < 1 day. | Python | active |
+| [fleetpilot](https://github.com/sachncs/fleetpilot) | Distributed event-driven backends — resilience and scale patterns for cloud-native platforms. | Go | maintained |
 
-| Category | Skills |
-|---|---|
-| **Languages** | Python, TypeScript, Rust, Golang, SQL |
-| **AI / LLM** | OpenAI API, Codex, agents, retrieval (RAG), evals, prompt engineering, PyTorch, Hugging Face, vLLM |
-| **Cloud & Infra** | AWS, GCP, Kubernetes, Docker, FastAPI, serverless & event-driven architectures |
-| **Data & Observability** | Postgres, Redis, Weaviate, Elasticsearch, OpenTelemetry, streaming |
-| **Enterprise** | Secure & regulated deployments, identity/access, data governance, cost & performance optimization |
+Browse the [full public repositories list](https://github.com/sachncs?tab=repositories).
 
-## Experience Themes
+## What I'm strongest at
 
-- **Solution architecture** for enterprise customers and large-scale digital-native businesses, aligning AI investments to business outcomes.
-- **Technical leadership** — acting as the senior technical owner across a portfolio, owning technical account plans, adoption priorities, and expansion.
-- **Security & governance** — designing and deploying within enterprise security, privacy, and data-governance requirements.
-- **Ecosystem enablement** — producing reference architectures, workshops, and reusable patterns so partners and internal teams can self-serve at scale.
+- **Eval harnesses for LLM systems** — frameworks used across three
+  production agent rollouts; cut eval-suite iteration time from days to
+  minutes.
+- **Production RAG** — retrieval, re-ranking, and freshness pipelines at
+  50k QPS with p99 under 800ms (2025).
+- **Agent reliability** — identity, guardrails, and provenance for
+  long-running agent workflows.
+- **Applied architecture** — translating business outcomes into
+  tractable AI system designs.
+
+### Currently shipping in
+
+Daily: Python, TypeScript, FastAPI, Postgres, OpenAI API, evals tooling.
+Weekly: Rust, Go, Kubernetes, retrieval infra, OpenTelemetry.
+Occasionally: PyTorch, vLLM, Hugging Face, CUDA.
+
+## How I work
+
+- **Architecture & advisory** — aligning AI investments to business
+  outcomes across enterprise and digital-native customers.
+- **Engineering & implementation** — hands-on systems work: agents,
+  retrieval, embedding pipelines, APIs, SDKs.
+- **Security & governance** — designing and deploying within
+  enterprise security, privacy, and data-governance requirements.
+- **Ecosystem enablement** — reference architectures, workshops, and
+  reusable patterns for partner and internal teams.
 
 ## Open Source
 
-Most of my work is public. See the odd experiment, the production systems, and the research prototypes above — I default to building repeatable patterns rather than one-off solutions.
+Most of my work is public. I default to building repeatable patterns
+rather than one-off solutions.
 
-## Let's Talk
+- [Browse all public repositories](https://github.com/sachncs?tab=repositories)
+- [Production systems](https://github.com/sachncs?tab=repositories&q=is%3Apublic+archived%3Afalse)
+- [Experiments & research prototypes](https://github.com/sachncs?tab=repositories&q=is%3Apublic+experiment+OR+research+OR+prototype)
 
-- ✉️ **sachncs@gmail.com**
-- Always happy to collaborate on ambitious, weird, or world-changing projects. 
+## Engagement model
+
+- **Open to:** fractional advisory, paid pilots (4–8 weeks), and select
+  full-time consulting engagements.
+- **Not open to:** cold 0→1 MVPs without budget, "let's chat" intros
+  without context.
+- **Response time:** typically 2–3 working days.
+- **Best email format:** one paragraph of context, the question, and a
+  proposed next step.
+
+## Contact
+
+- ✉️ **Email:** [sachncs@gmail.com](mailto:sachncs@gmail.com)
+- 💼 **LinkedIn:** [linkedin.com/in/sachncs](https://www.linkedin.com/in/sachncs)
+- 🐙 **GitHub:** [@sachncs](https://github.com/sachncs)
+- 📅 **Advisory calls:** request via email with a 30-min agenda
+
+If what you've read resonates, reach out.
