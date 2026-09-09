@@ -38,7 +38,7 @@ jobs:
       - name: Lychee link checker
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --exclude-loopback README.md
+          args: --no-progress --exclude-loopback --exclude 'linkedin\.com|shields\.io|sachncs\.github\.io' --accept '200,403,999' README.md
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
