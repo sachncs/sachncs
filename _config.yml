@@ -1,0 +1,45 @@
+title: Sachin — Applied AI Architect & Engineer
+description: >-
+  Production-grade AI systems — agents, RAG, evaluation, and the
+  integrations that make them stick. Selected OSS work below.
+url: https://sachncs.github.io/sachncs/
+baseurl: ""
+lang: en_US
+
+theme: jekyll-theme-minimal
+
+favicon: /sachncs/assets/sa.svg
+
+logo: /sachncs/assets/sa.svg
+
+repository: sachncs/sachncs
+show_downloads: false
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins: []
+
+exclude:
+  - .github/
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - SECURITY.md
+  - SUPPORT.md
+  - LICENSE
+  - .gitignore
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+include:
+  - assets/
