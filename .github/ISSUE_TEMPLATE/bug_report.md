@@ -12,7 +12,7 @@ A short, specific description of the issue.
 ## Where is it?
 
 - [ ] README on github.com/sachncs/sachncs
-- [ ] GitHub Pages site (https://sachncs.github.io/sachncs/)
+- [ ] GitHub Pages site (<https://sachncs.github.io/sachncs/>)
 - [ ] Social preview / unfurl
 - [ ] Other (describe below)
 

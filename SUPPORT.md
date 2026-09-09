@@ -7,7 +7,7 @@ This repository is a personal profile README and GitHub Pages site. It is
 
 | Need | Channel |
 |------|---------|
-| Quick question, intro, advisory inquiry | sachncs@gmail.com |
+| Quick question, intro, advisory inquiry | [sachncs@gmail.com](mailto:sachncs@gmail.com) |
 | Bug in a linked project | Open an issue in that project's repository |
 | Typo / wording fix in this README | [Open a content-fix issue](../../issues/new?template=typo_or_content_fix.md) |
 | Feature suggestion for this profile | [Open a feature request](../../issues/new?template=feature_request.md) |

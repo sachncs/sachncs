@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Value-first hero with prominent call-to-action buttons.
 - "Currently" / "Now" line signaling live activity.
 - Engagement model (open to / not open to / response time / best email format).
@@ -25,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `CHANGELOG.md` (this file).
 
 ### Changed
+
 - README hero rewritten from greeting-style to value-first positioning.
 - Role terminology standardized on "Applied AI Architect & Engineer".
 - "Skills" section reframed from vendor list to strengths with recency signals.
@@ -33,12 +35,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `.gitignore` trimmed to remove unrelated Python boilerplate.
 
 ### Removed
+
 - Generic "ambitious, weird, or world-changing" filler line.
 - Repository wiki (disabled — the README and Pages site are the documentation surface).
 
 ## [1.0.0] - 2026-09-07
 
 ### Changed
+
 - Repositioned profile for applied AI roles.
 - Removed prior "radar feature" project.
 

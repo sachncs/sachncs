@@ -18,7 +18,7 @@ projects linked from the "Selected Work" table, please report it privately.
 **Preferred channel:** GitHub private vulnerability reporting
 (Repository → Security → Advisories → "New draft security advisory").
 
-**Email fallback:** sachncs@gmail.com (PGP key on request).
+**Email fallback:** [sachncs@gmail.com](mailto:sachncs@gmail.com) (PGP key on request).
 
 Please **do not** file a public issue for security vulnerabilities.
 
