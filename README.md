@@ -1,16 +1,20 @@
-# sachncs / site
+# Sachin
 
-This repository hosts my product page and open-source work.
+I am a senior machine learning engineer and applied AI architect. I design,
+architect, and implement frontier AI systems end to end; the code is at
+[github.com/sachncs](https://github.com/sachncs). I take research-stage ideas
+from use-case discovery through prototyping, evaluation, and sustained production
+adoption, delivering safe, reliable systems with measurable business outcomes
+for enterprises.
 
-The product page is a **standalone React site** that lives entirely under
-[`site/`](./site). It is built with Vite + TypeScript + Tailwind, deployed
-to GitHub Pages via the workflow in
-[`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml).
-
-> **Live site:** <https://sachncs.github.io/sachncs/>
->
-> If you set up `sachncs.github.io` as the user-site repo and point it here,
-> it serves at the root URL.
+I work equally well as a senior technical advisor to CTO, CIO, and CISO
+stakeholders and as a hands-on engineer writing code, building evaluation
+harnesses, and resolving complex integrations. My work spans models, agents,
+retrieval, data pipelines, and scalable ML infrastructure, with architecture
+decisions grounded in reliability, latency, cost, security, privacy, and governance.
+I collaborate with research and product teams to turn emerging capabilities into
+production features, build reusable tools and deployment patterns, and help
+engineering teams adopt and operate the systems they ship.
 
 ---
 
