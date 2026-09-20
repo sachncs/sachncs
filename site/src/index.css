@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    color-scheme: dark light;
+    color-scheme: dark;
   }
 
   html {
@@ -15,8 +15,8 @@
   }
 
   html.dark body {
-    background: #0a0a0d;
-    color: #eeeef0;
+    background: #07131d;
+    color: #f6f8f4;
   }
 
   body {
@@ -54,7 +54,7 @@
   }
 
   .gradient-accent {
-    background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 40%, #6366f1 100%);
+    background: linear-gradient(135deg, #e7ffb5 0%, #c1f34d 40%, #86bd20 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -73,9 +73,9 @@
 
   .grid-bg {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 56px 56px;
+      linear-gradient(rgba(193, 243, 77, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(193, 243, 77, 0.08) 1px, transparent 1px);
+    background-size: 64px 64px;
     background-position: -1px -1px;
   }
 
