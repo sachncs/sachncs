@@ -1,4 +1,4 @@
-name: Deploy site to GitHub Pages
+name: Publish canonical personal site
 
 on:
   push:
@@ -16,44 +16,38 @@ concurrency:
 
 jobs:
   build:
-    name: Build site
+    name: Build and verify static pages
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: site
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '22'
           cache: npm
           cache-dependency-path: site/package-lock.json
-
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Setup Pages
+      - run: npm ci
+      - run: npm run check
+      - name: Configure root Pages site
+        if: github.repository == 'sachncs/sachncs.github.io'
         uses: actions/configure-pages@v5
-
-      - name: Upload artifact
+      - name: Upload static site
+        if: github.repository == 'sachncs/sachncs.github.io'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
 
   deploy:
-    name: Deploy to GitHub Pages
+    name: Publish at sachncs.github.io
+    if: github.repository == 'sachncs/sachncs.github.io'
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy root site
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,0 +1,26 @@
+import { useState } from 'react';
+import repositoryData from '../data/repositories.json';
+import { projects } from '../data/projects';
+import { profile } from '../data/profile';
+import { PageIntro, ConnectPreview } from '../components/Shared';
+import { CaseStudyBody } from './Work';
+export const repositories = repositoryData.repositories;
+export type Repository = typeof repositories[number];
+export function focusFor(r: Repository): string {
+  const text = `${r.description || ''} ${r.topics?.join(' ') || ''}`.toLowerCase();
+  if (/retrieval|search benchmark|rag/.test(text)) return 'Retrieval';
+  if (/agent|prompt/.test(text)) return 'Agents';
+  if (/evaluation|benchmark|test automation/.test(text)) return 'Evaluation';
+  if (/inference|infrastructure|cache|attention/.test(text)) return 'Infrastructure';
+  return 'Tools & research';
+}
+export function Repositories() {
+ const [filter, setFilter] = useState('All');
+ const [query, setQuery] = useState('');
+ const filtered = repositories.filter(r => (filter === 'All' || focusFor(r) === filter) && `${r.name} ${r.description} ${r.language} ${r.topics?.join(' ')}`.toLowerCase().includes(query.toLowerCase().trim()));
+ return <><PageIntro eyebrow="THE PUBLIC REPOSITORY INDEX" title="Ideas, implemented."><p>Open-source tools, systems, and research implementations. Explore the code, the purpose, and the technical focus of each project.</p><p className="muted">For deeper architectural context, start with <a href="/work">selected work ↗</a></p></PageIntro><div className="repository-controls"><div className="filter-buttons" role="group" aria-label="Filter repositories by focus">{['All', 'Agents', 'Retrieval', 'Evaluation', 'Infrastructure', 'Tools & research'].map(f => <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)}>{f}</button>)}</div><label className="search-label">Find a repository<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Name, language, or topic" /></label></div><div className="index-caption"><p aria-live="polite" role="status">{filtered.length} {filtered.length === 1 ? 'repository' : 'repositories'}</p><p>Public metadata snapshot · 21 Sep 2026</p></div><div className="repository-list">{filtered.map(r => <article className="repository-row" key={r.name}><div><span className="mono muted">{focusFor(r)}{r.fork ? ' · Fork' : ''}{r.archived ? ' · Archived' : ''}</span><h2><a href={`/${r.name}`}>{r.name}</a></h2><p>{r.description || 'Public source code. The owner has not provided a repository description.'}</p>{r.topics && r.topics.length > 0 && <p className="repo-topics">{r.topics.slice(0, 5).join(' / ')}</p>}</div><div className="repository-side"><span className="mono">{r.language || 'Not specified'}</span><a href={`/${r.name}`}>Project page ↗</a><a href={r.html_url}>GitHub ↗</a></div></article>)}</div>{filtered.length === 0 && <div className="empty-results"><h2>No matching repositories.</h2><p>Try another name, topic, or language.</p><button className="button-quiet" onClick={() => { setQuery(''); setFilter('All'); }}>Clear filters</button></div>}<ConnectPreview /></>;
+}
+export function Project({ repository: r }: { repository: Repository }) {
+ const project = projects.find(p => p.slug === r.name);
+ return <><div className="breadcrumbs"><a href="/repos">Repositories</a><span aria-hidden="true">/</span><span>{r.name}</span></div><PageIntro eyebrow={`${focusFor(r)} / ${r.language || 'Public repository'}`} title={r.name}><p>{r.description || 'A public repository by Sachin. Explore the source for implementation details.'}</p><div className="hero-actions"><a className="button-primary" href={r.html_url}>View on GitHub ↗</a>{r.homepage && !r.homepage.includes('sachncs.github.io') && <a className="button-quiet" href={r.homepage}>Project documentation ↗</a>}</div></PageIntro>{project ? <section className="project-detail"><h2>{project.title}</h2><CaseStudyBody project={project} /><h3>Usage</h3><p>Consult the <a href={`${r.html_url}#readme`}>repository installation guide</a> for prerequisites and configuration before running these commands.</p><pre tabIndex={0}><code>{project.usage}</code></pre></section> : <div className="project-overview"><h2>Overview & technical focus</h2><p>{r.description || 'The repository does not currently publish a description. Its source and documentation are the authoritative reference.'}</p><p>This repository is part of my public engineering work. For documented architecture, implementation details, trade-offs, and usage, explore the <a href={`${r.html_url}#readme`}>project README</a> and <a href={`${r.html_url}/tree/${r.default_branch}`}>source tree</a>.</p>{r.topics && r.topics.length > 0 && <p className="mono muted">{r.topics.join(' / ')}</p>}<h3>Related thinking</h3><p>{focusFor(r) === 'Agents' ? <a href="/writing/designing-reliable-ai-agents">Designing reliable AI agents starts at the tool boundary ↗</a> : <a href="/writing/evaluation-as-infrastructure">Evaluation is infrastructure, not a release-day checklist ↗</a>}</p></div>}<p className="source-note">Repository metadata retrieved from the GitHub API on {repositoryData.retrievedAt}. The <a href={`${profile.github}/${r.name}`}>public source</a> is the reference for current capabilities.</p><ConnectPreview /></>;
+}
